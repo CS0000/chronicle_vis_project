@@ -43,8 +43,8 @@ def string_to_date(string):
     _ = string.split('-')
     assert len(_) == 3, f"{string} is not standard format for datetime.date()"
     try: 
-        # d = datetime.date(int(_[0]),int(_[1]),int(_[2]),errors='coerce')
-        d = pd.to_datetime(string, format='%Y-%m-%d', errors='coerce')
+        d = datetime.date(int(_[0]),int(_[1]),int(_[2]))
+        # d = pd.to_datetime(string, format='%Y-%m-%d', errors='coerce')
         return d
     except:
         # print(f"{_} ???")
