@@ -50,7 +50,12 @@ def string_to_date(string):
         # print(f"{_} ???")
         _ = [i.replace('xx','01') for i in _]
         _ = [i.replace('XX','01') for i in _]
-        return datetime.date(int(_[0]),int(_[1]),int(_[2]))
+        try:
+            d = datetime.date(int(_[0]),int(_[1]),int(_[2]))
+        except:
+            d = None
+
+        return d
 
         
 
