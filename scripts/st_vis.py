@@ -61,7 +61,6 @@ maps_df_se = maps_df.loc[maps_df['chronicle'].isin(chronicle_selects),:]
 date_list = []
 for i in maps_df_se['belong_date'].tolist():
     date_list.append(string_to_date(i)) # date(*[int(j) for j in i.split('-')]))
-date_list = [i for i in date_list if pd.notna(i)]
 maps_df_se['belong_date'] = date_list
 date_list = [i for i in date_list if pd.notna(i)]
 date_list = sorted(date_list)
